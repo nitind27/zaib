@@ -1,0 +1,97 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6B5010 0%, #8B6F2A 100%);
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(107, 80, 16, 0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.scroll-to-top:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(107, 80, 16, 0.4);
+  background: linear-gradient(135deg, #5A420D 0%, #6B5010 100%);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-2px);
+}
+
+.scroll-to-top svg {
+  transition: transform 0.3s ease;
+  color: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.scroll-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Adjust position when chatbot is present (on contact page) */
+.contact-page .scroll-to-top {
+  bottom: 8rem;
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 46px;
+    height: 46px;
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+
+  .contact-page .scroll-to-top {
+    bottom: 7.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    width: 44px;
+    height: 44px;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .contact-page .scroll-to-top {
+    bottom: 7rem;
+  }
+}
+

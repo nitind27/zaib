@@ -1,0 +1,204 @@
+.follow-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #FAF8F3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Section */
+.follow-image-section {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.follow-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 30%;
+  overflow: hidden;
+}
+
+.follow-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+.follow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(107, 80, 16, 0.2) 0%,
+    rgba(139, 105, 20, 0.15) 50%,
+    rgba(212, 175, 55, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* Button Section */
+.follow-button-section {
+  width: 100%;
+  padding: 4rem 0;
+  background: #D6B371;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.follow-button-section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.follow-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.follow-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: #5C4A37;
+  color: #FAF8F3;
+  text-decoration: none;
+  border: 1px solid #5C4A37;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+}
+
+.follow-button:hover,
+.follow-button.hovered {
+  background: #4A3A2A;
+  border-color: #4A3A2A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(92, 74, 55, 0.4);
+}
+
+.follow-button:active {
+  transform: translateY(0);
+}
+
+.follow-button-text {
+  position: relative;
+  z-index: 1;
+}
+
+.follow-button-icon {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.follow-button:hover .follow-button-icon,
+.follow-button.hovered .follow-button-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .follow-image-wrapper {
+    padding-bottom: 35%;
+  }
+
+  .follow-button-section {
+    padding: 3.5rem 0;
+  }
+
+  .follow-button-section-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .follow-button {
+    padding: 0.875rem 2rem;
+    font-size: 0.9375rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .follow-image-wrapper {
+    padding-bottom: 45%;
+  }
+
+  .follow-button-section {
+    padding: 3rem 0;
+  }
+
+  .follow-button-section-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .follow-button {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.875rem;
+    letter-spacing: 1.5px;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .follow-image-wrapper {
+    padding-bottom: 55%;
+  }
+
+  .follow-button-section {
+    padding: 2.5rem 0;
+  }
+
+  .follow-button-section-wrapper {
+    padding: 0 1rem;
+  }
+
+  .follow-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    gap: 0.5rem;
+  }
+
+  .follow-button-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+

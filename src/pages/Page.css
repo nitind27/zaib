@@ -1,0 +1,53 @@
+.page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.page-content {
+  max-width: 800px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #5C4A37;
+}
+
+.page-content p {
+  font-size: 0.9rem;
+  color: #6B5B47;
+  line-height: 1.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1.5rem;
+    min-height: calc(100vh - 70px);
+  }
+
+  .page-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .page-content p {
+    font-size: 0.85rem;
+  }
+}
+
+
