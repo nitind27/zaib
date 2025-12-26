@@ -10,7 +10,6 @@ const Navbar = () => {
   const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false);
   const [signInData, setSignInData] = useState({ email: '', password: '' });
   const location = useLocation();
-  const navigate = useNavigate();
   const { wishlistCount } = useWishlist();
   const { cartCount } = useCart();
   
