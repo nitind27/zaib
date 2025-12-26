@@ -5,7 +5,6 @@ import './Profile.css';
 const Profile = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState<any>(null);
   
   const [signInData, setSignInData] = useState({
     email: '',
@@ -28,7 +27,6 @@ const Profile = () => {
     const userData = localStorage.getItem('user');
     if (userData) {
       const parsedUser = JSON.parse(userData);
-      setUser(parsedUser);
       setIsLoggedIn(true);
       setProfileData(prev => ({
         ...prev,
@@ -60,7 +58,6 @@ const Profile = () => {
         name: signInData.email.split('@')[0]
       };
       localStorage.setItem('user', JSON.stringify(userData));
-      setUser(userData);
       setIsLoggedIn(true);
       setProfileData(prev => ({
         ...prev,
@@ -91,7 +88,6 @@ const Profile = () => {
   const handleLogout = () => {
     localStorage.removeItem('user');
     setIsLoggedIn(false);
-    setUser(null);
     setSignInData({ email: '', password: '' });
     navigate('/');
     window.location.reload();

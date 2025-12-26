@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useWishlist } from '../context/WishlistContext';
 import { useCart } from '../context/CartContext';
 import './Navbar.css';
@@ -80,10 +80,6 @@ const Navbar = () => {
     } else {
       alert('Invalid email or password');
     }
-  };
-
-  const toggleSubmenu = (menu: string) => {
-    setOpenSubmenu(openSubmenu === menu ? null : menu);
   };
 
   const isActive = (path: string) => {

@@ -50,14 +50,6 @@ const ImageSlider = () => {
     setCurrentSlide(index);
   };
 
-  const goToPrevious = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const goToNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
   return (
     <div className="image-slider">
       <div className="slider-container">
